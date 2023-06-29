@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet " href="{{url_for('static', filename= 'style.css')}}">
+    <title>Preceptor</title>
+</head>
+
+<body>
+    <header>
+        <h1>Colegio San Miguel</h1>
+    </header>
+
+
+    <section>
+        <h2>Bienvenid@ preceptor/a</h2>
+    </section>
+    <!-- --------BOTONERA--------------- -->
+    <div id="botonera">
+        <nav class="botones">
+            <ul class="menu">
+                <li><a href="{{url_for('listarCursoPorPreceptor')}}"> <b>REGISTRAR ASISTENCIA</a></b></li>
+                <li><a href="p"> <b>OBTENER INFORME DE ASISTENCIAS</a></b></li>
+                <li><a href="{{url_for('logout')}}"><b>SALIR</a></b></li>
+            </ul>
+        </nav>
+    </div>
+
+    <footer>
+        <p>Av. José Ignacio de la Roza 1804 - Tel.: (264) 4235702</p>
+    </footer>
+</body>
+
+</html>

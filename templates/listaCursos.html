@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet " href="{{url_for('static', filename= 'style.css')}}">
+    <title>Preceptor</title>
+</head>
+
+<body>
+    <header>
+        <h1>Colegio San Miguel</h1>
+    </header>
+
+
+    <section>
+        <h2>Bienvenid@ preceptor/a</h2>
+    </section>
+    <!-- --------BOTONERA--------------- -->
+    <div id="botonera">
+        <nav class="botones">
+            <ul class="menu">
+                <li><a href="{{url_for('agregarAsistencia')}}"> <b>REGISTRAR ASISTENCIA</a></b></li>
+                <li><a href=""> <b>OBTENER INFORME DE ASISTENCIAS</a></b></li>
+                <li><a href=""><b>SALIR</a></b></li>
+            </ul>
+        </nav>
+    </div>
+    <h2>Seleccione un curso para registrar asistencia</h2>
+      <!-- --------TABLA CON LOS CURSOS--------------- -->
+    <form action="{{url_for('listarEstudiantesPorCurso')}}" method = "post">
+    <table class="cursos">
+        <tr>
+            <th>
+                <select>
+                    {% for curso in cursos %}
+                        <option id="{{curso.id}}" value="1">Curso: {{curso.anio}} - {{curso.division}} </option>
+                    {% endfor %}
+                </select>
+            </th>
+            <th> <select>
+                    <option value="1">Aula</option>
+                    <option value="2">Ed. Física</option>
+                </select>
+            </th>
+        
+            <th><input type = "submit" value = "Listar" /></th>
+        </tr>
+    </table>
+    </form>
+
+    <footer>
+        <p>Av. José Ignacio de la Roza 1804 - Tel.: (264) 4235702</p>
+    </footer>
+</body>
+
+</html>
